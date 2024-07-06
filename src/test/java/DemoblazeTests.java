@@ -67,8 +67,11 @@ public class DemoblazeTests {
 
     @Test
     void testCreateOrderForAppleMonitor24() throws InterruptedException {
+        //registration step
         homepage.registration(username,password);
+        //login step
         cart_page cart_page_obj=homepage.login(username,password);
+        //add to cart step
         cart_page_obj.addCart(username,"egypt","cairo","232456786","12","2024");
     }
 }

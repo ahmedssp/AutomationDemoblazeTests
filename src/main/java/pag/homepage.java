@@ -9,18 +9,28 @@ public class homepage {
         this.page = page;
     }
 
-    public cart_page login(String username ,String password ){
+    public cart_page login(String username, String password) {
+        String loginButtonSelector = "#login2";
+        String usernameFieldSelector = "#loginusername";
+        String passwordFieldSelector = "#loginpassword";
+        String loginSubmitButtonSelector = "button[onclick='logIn()']";
 
-        page.click("#login2");
-        page.fill("#loginusername", username);
-        page.fill("#loginpassword", password);
-        page.click("button[onclick='logIn()']");
+        page.click(loginButtonSelector);
+        page.fill(usernameFieldSelector, username);
+        page.fill(passwordFieldSelector, password);
+        page.click(loginSubmitButtonSelector);
+
         return new cart_page(page);
     }
-    public void registration(String username ,String password ){
-        page.click("#signin2");
-        page.fill("#sign-username", username);
-        page.fill("#sign-password", password);
-        page.click("button[onclick='register()']");
-    }
-}
+
+    public void registration(String username, String password) {
+        String registrationButtonSelector = "#signin2";
+        String usernameFieldSelector = "#sign-username";
+        String passwordFieldSelector = "#sign-password";
+        String registrationSubmitButtonSelector = "button[onclick='register()']";
+
+        page.click(registrationButtonSelector);
+        page.fill(usernameFieldSelector, username);
+        page.fill(passwordFieldSelector, password);
+        page.click(registrationSubmitButtonSelector);
+    }}

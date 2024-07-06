@@ -2,12 +2,15 @@ package pag;
 
 import com.microsoft.playwright.Page;
 
+import java.nio.channels.Selector;
+
 public class cart_page {
     public static Page page;
 
     public cart_page(Page page) {
         this.page = page;
     }
+
     public void addCart(String username ,String country , String city, String Card,String month,String year){
 
         page.click("a:has-text('Monitors')");
